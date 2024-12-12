@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1593A4E652EA8CE2DA7C319F /* LearnConnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A49CEDD14C961A698926 /* LearnConnect.xcdatamodeld */; };
+		26836363EEFB64DE2078B71C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3A17AE08C3441891CFED5 /* AppDelegate.swift */; };
+		2C77FA422D0B7CC200C2BE62 /* LearnConnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA262D0B7CC200C2BE62 /* LearnConnect.xcdatamodeld */; };
+		2C77FA432D0B7CC200C2BE62 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA2E2D0B7CC200C2BE62 /* CoreDataManager.swift */; };
+		2C77FA472D0B7CC200C2BE62 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA392D0B7CC200C2BE62 /* VideoPlayerViewController.swift */; };
+		2C77FA482D0B7CC200C2BE62 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA272D0B7CC200C2BE62 /* Course.swift */; };
+		2C77FA492D0B7CC200C2BE62 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA382D0B7CC200C2BE62 /* ProfileViewController.swift */; };
+		2C77FA4A2D0B7CC200C2BE62 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA322D0B7CC200C2BE62 /* ThemeManager.swift */; };
+		2C77FA4B2D0B7CC200C2BE62 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA292D0B7CC200C2BE62 /* Video.swift */; };
+		2C77FA4C2D0B7CC200C2BE62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA302D0B7CC200C2BE62 /* NetworkManager.swift */; };
+		2C77FA4D2D0B7CC200C2BE62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA362D0B7CC200C2BE62 /* LoginViewController.swift */; };
+		2C77FA4F2D0B7CC200C2BE62 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA352D0B7CC200C2BE62 /* FavoritesViewController.swift */; };
+		2C77FA502D0B7CC200C2BE62 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA282D0B7CC200C2BE62 /* User.swift */; };
+		2C77FA522D0B7CC200C2BE62 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA2D2D0B7CC200C2BE62 /* AuthService.swift */; };
+		2C77FA552D0B7CC200C2BE62 /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA2F2D0B7CC200C2BE62 /* CourseService.swift */; };
+		2C77FA562D0B7CC200C2BE62 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA342D0B7CC200C2BE62 /* CoursesViewController.swift */; };
+		2C77FA582D0B7CC200C2BE62 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77FA372D0B7CC200C2BE62 /* MainTabBarController.swift */; };
+		2C77FA592D0B7CC200C2BE62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C77FA2B2D0B7CC200C2BE62 /* Preview Assets.xcassets */; };
+		2C88DC2C2D0B81860090D5EF /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88DC272D0B81860090D5EF /* CoursesView.swift */; };
+		2C88DC2D2D0B81860090D5EF /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88DC262D0B81860090D5EF /* CourseCell.swift */; };
+		2C88DC2E2D0B81860090D5EF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88DC292D0B81860090D5EF /* ProfileView.swift */; };
+		2C88DC2F2D0B81860090D5EF /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88DC2A2D0B81860090D5EF /* VideoPlayerView.swift */; };
+		2C88DC302D0B81860090D5EF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88DC282D0B81860090D5EF /* FavoritesView.swift */; };
+		60DE957DFCA338EB5EE6DB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85E2B1266EC058BAE586F07 /* Assets.xcassets */; };
+		A333C66AE367ED14339D033C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356C95DD2A257223C2FE1E81 /* Persistence.swift */; };
+		BCBB62858002ABB73D5C45FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B512F40ACB09819A3CE5C86 /* ContentView.swift */; };
+		E362A29BBDA67382D43605A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7BCB66F79B3F46C358E29B /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C77FA272D0B7CC200C2BE62 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		2C77FA282D0B7CC200C2BE62 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C77FA292D0B7CC200C2BE62 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		2C77FA2B2D0B7CC200C2BE62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C77FA2D2D0B7CC200C2BE62 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		2C77FA2E2D0B7CC200C2BE62 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2C77FA2F2D0B7CC200C2BE62 /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
+		2C77FA302D0B7CC200C2BE62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2C77FA322D0B7CC200C2BE62 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		2C77FA342D0B7CC200C2BE62 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		2C77FA352D0B7CC200C2BE62 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2C77FA362D0B7CC200C2BE62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2C77FA372D0B7CC200C2BE62 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2C77FA382D0B7CC200C2BE62 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2C77FA392D0B7CC200C2BE62 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		2C77FA412D0B7CC200C2BE62 /* LearnConnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearnConnect.xcdatamodel; sourceTree = "<group>"; };
+		2C88DC262D0B81860090D5EF /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		2C88DC272D0B81860090D5EF /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		2C88DC282D0B81860090D5EF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2C88DC292D0B81860090D5EF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2C88DC2A2D0B81860090D5EF /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		356C95DD2A257223C2FE1E81 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		49D3A17AE08C3441891CFED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56B04DD0454CA6762B0E954B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B512F40ACB09819A3CE5C86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B7BCB66F79B3F46C358E29B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A346838A0D934578200E7564 /* LearnConnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearnConnect.xcdatamodel; sourceTree = "<group>"; };
+		B85E2B1266EC058BAE586F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB7D53C7BBE944AC4757D73E /* LearnConnect.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LearnConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1061513284598B7DA5E89C97 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				49D3A17AE08C3441891CFED5 /* AppDelegate.swift */,
+				7B7BCB66F79B3F46C358E29B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1F5B3715249C03F59B6FA0BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB7D53C7BBE944AC4757D73E /* LearnConnect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C77FA2A2D0B7CC200C2BE62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C77FA272D0B7CC200C2BE62 /* Course.swift */,
+				2C77FA282D0B7CC200C2BE62 /* User.swift */,
+				2C77FA292D0B7CC200C2BE62 /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C77FA2C2D0B7CC200C2BE62 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2C77FA2B2D0B7CC200C2BE62 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C77FA312D0B7CC200C2BE62 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2C77FA2D2D0B7CC200C2BE62 /* AuthService.swift */,
+				2C77FA2E2D0B7CC200C2BE62 /* CoreDataManager.swift */,
+				2C77FA2F2D0B7CC200C2BE62 /* CourseService.swift */,
+				2C77FA302D0B7CC200C2BE62 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2C77FA332D0B7CC200C2BE62 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2C77FA322D0B7CC200C2BE62 /* ThemeManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2C77FA3A2D0B7CC200C2BE62 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C77FA342D0B7CC200C2BE62 /* CoursesViewController.swift */,
+				2C77FA352D0B7CC200C2BE62 /* FavoritesViewController.swift */,
+				2C77FA362D0B7CC200C2BE62 /* LoginViewController.swift */,
+				2C77FA372D0B7CC200C2BE62 /* MainTabBarController.swift */,
+				2C77FA382D0B7CC200C2BE62 /* ProfileViewController.swift */,
+				2C77FA392D0B7CC200C2BE62 /* VideoPlayerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C88DC2B2D0B81860090D5EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C88DC262D0B81860090D5EF /* CourseCell.swift */,
+				2C88DC272D0B81860090D5EF /* CoursesView.swift */,
+				2C88DC282D0B81860090D5EF /* FavoritesView.swift */,
+				2C88DC292D0B81860090D5EF /* ProfileView.swift */,
+				2C88DC2A2D0B81860090D5EF /* VideoPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DFD377C541771DDC6EC42F0 = {
+			isa = PBXGroup;
+			children = (
+				7514D850B54E907F79D09F58 /* LearnConnect */,
+				1F5B3715249C03F59B6FA0BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7514D850B54E907F79D09F58 /* LearnConnect */ = {
+			isa = PBXGroup;
+			children = (
+				2C88DC2B2D0B81860090D5EF /* Views */,
+				2C77FA262D0B7CC200C2BE62 /* LearnConnect.xcdatamodeld */,
+				2C77FA2A2D0B7CC200C2BE62 /* Models */,
+				2C77FA2C2D0B7CC200C2BE62 /* Preview Content */,
+				2C77FA312D0B7CC200C2BE62 /* Services */,
+				2C77FA332D0B7CC200C2BE62 /* Utilities */,
+				2C77FA3A2D0B7CC200C2BE62 /* ViewControllers */,
+				B85E2B1266EC058BAE586F07 /* Assets.xcassets */,
+				5B512F40ACB09819A3CE5C86 /* ContentView.swift */,
+				56B04DD0454CA6762B0E954B /* Info.plist */,
+				1B11A49CEDD14C961A698926 /* LearnConnect.xcdatamodeld */,
+				356C95DD2A257223C2FE1E81 /* Persistence.swift */,
+				1061513284598B7DA5E89C97 /* App */,
+			);
+			path = LearnConnect;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98C0E01E0ED3B5F41D95122E /* LearnConnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0578EC828AEAF0AD0F17C4E /* Build configuration list for PBXNativeTarget "LearnConnect" */;
+			buildPhases = (
+				170C699715EA8EFBF8809016 /* Sources */,
+				D1CF2A763CB32E896696EC11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearnConnect;
+			productName = LearnConnect;
+			productReference = CB7D53C7BBE944AC4757D73E /* LearnConnect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		962AB61A1466DE82AA837336 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1400;
+			};
+			buildConfigurationList = F4AB5321CD1E3D9B6F099E3F /* Build configuration list for PBXProject "LearnConnect" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2DFD377C541771DDC6EC42F0;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98C0E01E0ED3B5F41D95122E /* LearnConnect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1CF2A763CB32E896696EC11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DE957DFCA338EB5EE6DB5B /* Assets.xcassets in Resources */,
+				2C77FA592D0B7CC200C2BE62 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		170C699715EA8EFBF8809016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26836363EEFB64DE2078B71C /* AppDelegate.swift in Sources */,
+				BCBB62858002ABB73D5C45FC /* ContentView.swift in Sources */,
+				1593A4E652EA8CE2DA7C319F /* LearnConnect.xcdatamodeld in Sources */,
+				A333C66AE367ED14339D033C /* Persistence.swift in Sources */,
+				2C77FA422D0B7CC200C2BE62 /* LearnConnect.xcdatamodeld in Sources */,
+				2C88DC2C2D0B81860090D5EF /* CoursesView.swift in Sources */,
+				2C88DC2D2D0B81860090D5EF /* CourseCell.swift in Sources */,
+				2C88DC2E2D0B81860090D5EF /* ProfileView.swift in Sources */,
+				2C88DC2F2D0B81860090D5EF /* VideoPlayerView.swift in Sources */,
+				2C88DC302D0B81860090D5EF /* FavoritesView.swift in Sources */,
+				2C77FA432D0B7CC200C2BE62 /* CoreDataManager.swift in Sources */,
+				2C77FA472D0B7CC200C2BE62 /* VideoPlayerViewController.swift in Sources */,
+				2C77FA482D0B7CC200C2BE62 /* Course.swift in Sources */,
+				2C77FA492D0B7CC200C2BE62 /* ProfileViewController.swift in Sources */,
+				2C77FA4A2D0B7CC200C2BE62 /* ThemeManager.swift in Sources */,
+				2C77FA4B2D0B7CC200C2BE62 /* Video.swift in Sources */,
+				2C77FA4C2D0B7CC200C2BE62 /* NetworkManager.swift in Sources */,
+				2C77FA4D2D0B7CC200C2BE62 /* LoginViewController.swift in Sources */,
+				2C77FA4F2D0B7CC200C2BE62 /* FavoritesViewController.swift in Sources */,
+				2C77FA502D0B7CC200C2BE62 /* User.swift in Sources */,
+				2C77FA522D0B7CC200C2BE62 /* AuthService.swift in Sources */,
+				2C77FA552D0B7CC200C2BE62 /* CourseService.swift in Sources */,
+				2C77FA562D0B7CC200C2BE62 /* CoursesViewController.swift in Sources */,
+				2C77FA582D0B7CC200C2BE62 /* MainTabBarController.swift in Sources */,
+				E362A29BBDA67382D43605A4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B9DD0F832E67A3F1A02C4C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LearnConnect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.learnconnect.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91897AAD4DE631815F9ABF82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DEB3B5B861425C6B18AC0A45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LearnConnect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.learnconnect.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8B87165B0229BE990B37415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0578EC828AEAF0AD0F17C4E /* Build configuration list for PBXNativeTarget "LearnConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB3B5B861425C6B18AC0A45 /* Debug */,
+				4B9DD0F832E67A3F1A02C4C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F4AB5321CD1E3D9B6F099E3F /* Build configuration list for PBXProject "LearnConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91897AAD4DE631815F9ABF82 /* Debug */,
+				F8B87165B0229BE990B37415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B11A49CEDD14C961A698926 /* LearnConnect.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A346838A0D934578200E7564 /* LearnConnect.xcdatamodel */,
+			);
+			currentVersion = A346838A0D934578200E7564 /* LearnConnect.xcdatamodel */;
+			path = LearnConnect.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		2C77FA262D0B7CC200C2BE62 /* LearnConnect.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2C77FA412D0B7CC200C2BE62 /* LearnConnect.xcdatamodel */,
+			);
+			currentVersion = 2C77FA412D0B7CC200C2BE62 /* LearnConnect.xcdatamodel */;
+			path = LearnConnect.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 962AB61A1466DE82AA837336 /* Project object */;
+}
