@@ -9,19 +9,19 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupViewControllers() {
-        let coursesVC = CoursesViewController()
-        let coursesNav = UINavigationController(rootViewController: coursesVC)
-        coursesNav.tabBarItem = UITabBarItem(title: "Courses", image: UIImage(systemName: "book.fill"), tag: 0)
+        let coursesVC = UINavigationController(rootViewController: CoursesViewController())
+        coursesVC.tabBarItem = UITabBarItem(title: "Courses", image: UIImage(systemName: "book"), tag: 0)
         
-        let favoritesVC = FavoritesViewController()
-        let favoritesNav = UINavigationController(rootViewController: favoritesVC)
-        favoritesNav.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart.fill"), tag: 1)
+        let myCoursesVC = UINavigationController(rootViewController: MyCoursesViewController())
+        myCoursesVC.tabBarItem = UITabBarItem(title: "My Courses", image: UIImage(systemName: "books.vertical"), tag: 1)
         
-        let profileVC = ProfileViewController()
-        let profileNav = UINavigationController(rootViewController: profileVC)
-        profileNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 2)
+        let favoritesVC = UINavigationController(rootViewController: FavoritesViewController())
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 2)
         
-        viewControllers = [coursesNav, favoritesNav, profileNav]
+        let profileVC = UINavigationController(rootViewController: ProfileViewController())
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 3)
+        
+        viewControllers = [coursesVC, myCoursesVC, favoritesVC, profileVC]
     }
     
     private func setupAppearance() {

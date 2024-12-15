@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private let usernameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .center
@@ -30,55 +30,56 @@ class ProfileViewController: UIViewController {
         return label
     }()
     
-    private lazy var darkModeSwitch: UISwitch = {
-        let toggle = UISwitch()
-        toggle.translatesAutoresizingMaskIntoConstraints = false
-        toggle.addTarget(self, action: #selector(darkModeSwitchChanged), for: .valueChanged)
-        return toggle
+    private let coursesContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    private let darkModeLabel: UILabel = {
+    private let coursesCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "Dark Mode"
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var signOutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Sign Out", for: .normal)
-        button.setTitleColor(.systemRed, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(signOutTapped), for: .touchUpInside)
-        return button
+    private let coursesLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Enrolled Courses"
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .secondaryLabel
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupNavigationBar()
         updateUserInfo()
-        setupDarkModeState()
+    }
+    
+    private func setupNavigationBar() {
+        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(settingsTapped))
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
     private func setupUI() {
         title = "Profile"
         view.backgroundColor = .systemBackground
         
-        // Add settings button to navigation bar
-        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "gear"),
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(settingsTapped))
-        navigationItem.rightBarButtonItem = settingsButton
-        
         view.addSubview(profileImageView)
-        view.addSubview(usernameLabel)
+        view.addSubview(nameLabel)
         view.addSubview(emailLabel)
-        view.addSubview(darkModeLabel)
-        view.addSubview(darkModeSwitch)
-        view.addSubview(signOutButton)
+        view.addSubview(coursesContainer)
+        
+        coursesContainer.addSubview(coursesCountLabel)
+        coursesContainer.addSubview(coursesLabel)
         
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -86,82 +87,39 @@ class ProfileViewController: UIViewController {
             profileImageView.widthAnchor.constraint(equalToConstant: 120),
             profileImageView.heightAnchor.constraint(equalToConstant: 120),
             
-            usernameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 16),
-            usernameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            emailLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 8),
+            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emailLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            darkModeLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 40),
-            darkModeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            coursesContainer.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 32),
+            coursesContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            darkModeSwitch.centerYAnchor.constraint(equalTo: darkModeLabel.centerYAnchor),
-            darkModeSwitch.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            coursesCountLabel.topAnchor.constraint(equalTo: coursesContainer.topAnchor),
+            coursesCountLabel.centerXAnchor.constraint(equalTo: coursesContainer.centerXAnchor),
             
-            signOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            coursesLabel.topAnchor.constraint(equalTo: coursesCountLabel.bottomAnchor, constant: 4),
+            coursesLabel.centerXAnchor.constraint(equalTo: coursesContainer.centerXAnchor),
+            coursesLabel.bottomAnchor.constraint(equalTo: coursesContainer.bottomAnchor)
         ])
         
-        // Make profile image view circular
         profileImageView.layer.cornerRadius = 60
     }
     
     private func updateUserInfo() {
         if let user = AuthService.shared.getCurrentUser() {
-            usernameLabel.text = user.username
+            nameLabel.text = user.name
             emailLabel.text = user.email
-            
-            // Load profile image if available
-            if let profileImageURL = user.profileImageURL,
-               let url = URL(string: profileImageURL) {
-                // TODO: Load image using proper image loading library
-            }
+            coursesCountLabel.text = String(user.enrolledCourses.count)
         }
-    }
-    
-    private func setupDarkModeState() {
-        // Set initial state based on current theme
-        darkModeSwitch.isOn = ThemeManager.shared.currentTheme == .dark
-    }
-    
-    @objc private func darkModeSwitchChanged() {
-        // Update app theme
-        ThemeManager.shared.currentTheme = darkModeSwitch.isOn ? .dark : .light
     }
     
     @objc private func settingsTapped() {
-        // TODO: Present settings view controller
-    }
-    
-    @objc private func signOutTapped() {
-        let alert = UIAlertController(title: "Sign Out",
-                                    message: "Are you sure you want to sign out?",
-                                    preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { [weak self] _ in
-            do {
-                try AuthService.shared.signOut()
-                // Present login screen
-                let loginVC = LoginViewController()
-                loginVC.modalPresentationStyle = .fullScreen
-                self?.present(loginVC, animated: true)
-            } catch {
-                // Show error alert
-                print("Sign out error: \(error)")
-            }
-        })
-        
-        present(alert, animated: true)
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        // Update switch state if system appearance changes
-        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
-            darkModeSwitch.isOn = ThemeManager.shared.currentTheme == .dark
-        }
+        let settingsVC = SettingsViewController()
+        settingsVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
 }

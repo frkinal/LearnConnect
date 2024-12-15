@@ -7,10 +7,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(windowScene: windowScene)
+        // Apply stored theme before setting up the window
+        let storedTheme = ThemeManager.shared.currentTheme
         
-        // Apply stored theme
-        ThemeManager.shared.applyStoredTheme()
+        window = UIWindow(windowScene: windowScene)
+        window?.overrideUserInterfaceStyle = storedTheme.userInterfaceStyle
         
         // Set initial view controller based on auth state
         if AuthService.shared.getCurrentUser() != nil {
@@ -23,6 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window?.makeKeyAndVisible()
+        
+        // Apply theme to all windows in the scene
+        ThemeManager.shared.applyTheme(storedTheme)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

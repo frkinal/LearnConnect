@@ -1,8 +1,8 @@
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class MyCoursesViewController: UIViewController {
     private let courseService: CourseService
-    private var favoriteCourses: [Course] = []
+    private var registeredCourses: [Course] = []
     private var coursesByCategory: [String: [Course]] = [:]
     private var categories: [String] = []
     
@@ -32,11 +32,11 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadFavoriteCourses()
+        loadRegisteredCourses()
     }
     
     private func setupUI() {
-        title = "Favorites"
+        title = "My Courses"
         view.backgroundColor = .systemBackground
         
         view.addSubview(tableView)
@@ -54,20 +54,20 @@ class FavoritesViewController: UIViewController {
     private func setupNotifications() {
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(handleFavoriteChanged),
-            name: NSNotification.Name("CourseFavoriteChanged"),
+            selector: #selector(handleCourseRegistrationChanged),
+            name: NSNotification.Name("CourseRegistrationChanged"),
             object: nil
         )
     }
     
-    @objc private func handleFavoriteChanged() {
-        loadFavoriteCourses()
+    @objc private func handleCourseRegistrationChanged() {
+        loadRegisteredCourses()
     }
     
-    private func loadFavoriteCourses() {
+    private func loadRegisteredCourses() {
         Task {
             do {
-                favoriteCourses = try await courseService.getFavoriteCourses()
+                registeredCourses = try await courseService.getRegisteredCourses()
                 organizeCoursesByCategory()
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData()
@@ -84,7 +84,7 @@ class FavoritesViewController: UIViewController {
         coursesByCategory.removeAll()
         
         // Group courses by category
-        for course in favoriteCourses {
+        for course in registeredCourses {
             if coursesByCategory[course.category] == nil {
                 coursesByCategory[course.category] = []
             }
@@ -96,7 +96,7 @@ class FavoritesViewController: UIViewController {
     }
     
     private func updateEmptyState() {
-        if favoriteCourses.isEmpty {
+        if registeredCourses.isEmpty {
             showEmptyState()
         } else {
             hideEmptyState()
@@ -105,11 +105,19 @@ class FavoritesViewController: UIViewController {
     
     private func showEmptyState() {
         let emptyLabel = UILabel()
-        emptyLabel.text = "No favorite courses yet"
+        emptyLabel.text = "You haven't enrolled in any courses yet"
         emptyLabel.textAlignment = .center
         emptyLabel.textColor = .secondaryLabel
         emptyLabel.numberOfLines = 0
         emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(emptyLabel)
+        NSLayoutConstraint.activate([
+            emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            emptyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emptyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
         
         tableView.backgroundView = emptyLabel
     }
@@ -130,7 +138,7 @@ class FavoritesViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension FavoritesViewController: UITableViewDataSource {
+extension MyCoursesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
     }
@@ -179,7 +187,7 @@ extension FavoritesViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension FavoritesViewController: UITableViewDelegate {
+extension MyCoursesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         

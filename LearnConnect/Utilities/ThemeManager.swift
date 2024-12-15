@@ -25,7 +25,12 @@ final class ThemeManager {
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: themeKey)
             applyTheme(newValue)
+            NotificationCenter.default.post(name: .themeChanged, object: nil)
         }
+    }
+    
+    func toggleTheme() {
+        currentTheme = currentTheme == .light ? .dark : .light
     }
     
     func applyTheme(_ theme: Theme) {
@@ -39,4 +44,8 @@ final class ThemeManager {
     func applyStoredTheme() {
         applyTheme(currentTheme)
     }
+}
+
+extension NSNotification.Name {
+    static let themeChanged = NSNotification.Name("ThemeChanged")
 }
