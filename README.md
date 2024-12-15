@@ -27,3 +27,6 @@ LearnConnect is a modern video-based education platform that allows users to bro
 1. Clone the repository
 2. Open `LearnConnect.xcodeproj` in Xcode
 3. Build and run the project
+
+## Video
+[Youtube Video](https://www.youtube.com/shorts/XOjZ-MOAOQ0)
