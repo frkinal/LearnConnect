@@ -13,10 +13,8 @@ LearnConnect is a modern video-based education platform that allows users to bro
 ### Bonus Features
 - Course filtering by category
 - Favorites system
-- Offline video viewing
 - Video playback speed control
 - Rating and review system
-- Push notifications
 
 ## Technical Stack
 - Swift
@@ -25,32 +23,7 @@ LearnConnect is a modern video-based education platform that allows users to bro
 - URLSession for networking
 - XCTest for unit testing
 
-## Requirements
-- iOS 15.0+
-- Xcode 14.0+
-- Swift 5.0+
-
 ## Installation
 1. Clone the repository
 2. Open `LearnConnect.xcodeproj` in Xcode
 3. Build and run the project
-
-## Project Structure
-```
-LearnConnect/
-├── App/
-│   ├── AppDelegate.swift
-│   └── SceneDelegate.swift
-├── Models/
-├── Views/
-├── ViewModels/
-├── Services/
-├── Utils/
-└── Resources/
-```
-
-## Contributing
-Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details
